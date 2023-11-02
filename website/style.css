@@ -1,12 +1,16 @@
 /* Body */
 body {
-  background-color: wheat;
+  background-color: blue;
 }
 /* heading */
 #PageHeading {
   font-family: "Arial";
   color: white;
+  display: flex;
+  justify-content: center;
 }
+
+/* Set alarm slider*/
 
 /* Button */
 .button {
@@ -21,16 +25,15 @@ body {
   background-color: rgb(71, 71, 71);
 }
 
-/* The switch - the box around the slider */
-  .switch {
-    position: fixed;
-    right:25px;
-    top: 480px;
-    display: flex;
-    width: 50px;
-    height: 26px;
-
-  }
+/* The switch - the box around the toggle */
+.switch {
+  position: fixed;
+  right: 25px;
+  top: 480px;
+  display: flex;
+  width: 50px;
+  height: 26px;
+}
 
 /* Hide default HTML checkbox */
 .switch input {
@@ -39,8 +42,8 @@ body {
   height: 0;
 }
 
-/* The slider */
-.slider {
+/* The toggle */
+.toggle {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -52,7 +55,7 @@ body {
   transition: 0.4s;
 }
 
-.slider:before {
+.toggle:before {
   position: absolute;
   content: "";
   height: 26px;
@@ -64,30 +67,25 @@ body {
   transition: 0.4s;
 }
 
-input:checked + .slider {
+input:checked + .toggle {
   background-color: #2196f3;
 }
 
-input:focus + .slider {
+input:focus + .toggle {
   box-shadow: 0 0 1px #2196f3;
 }
 
-input:checked + .slider:before {
+input:checked + .toggle:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
-.slider.round {
+/* Round the toggle */
+.toggle.round {
   border-radius: 34px;
 }
 
-.slider.round:before {
+.toggle.round:before {
   border-radius: 50%;
-}
-
-input[type="range"][orient="circular"] {
-  writing-mode: bt-lr;
-  appearance: slider-circular;
 }
